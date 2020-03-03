@@ -1,0 +1,24 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+
+
+
+
+public class CustomerMain {
+		public static void main(String args[]) {
+	List<CustomerModel>lr=new LinkedList<CustomerModel>();
+	
+	
+	
+	
+	CustomerModel r1=new CustomerModel(101,"lava","nya","lava@123", 65847878, 887645788);
+	lr.add(r1);
+	System.out.println(lr);
+	
+     r1.verify("lava123","nya"){
+    	 
+     }
+		}
+}

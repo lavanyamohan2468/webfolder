@@ -1,0 +1,25 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+
+
+public class RegistrationMain {
+		public static void main(String args[]) {
+	List<RegistrationBean>lr=new LinkedList<RegistrationBean>();
+	
+	/*Scanner scan=new Scanner(System.in);
+	
+	String s=scan.nextLine();
+	String r=scan.nextLine();
+	*/
+	
+	Registration r1=new Registration(101,"lava","1346","lava@123", 65847878, 887645788);
+	lr.add(r1);
+	System.out.println(lr);
+	
+     r1.verify("lava@123","1346");
+		}
+}

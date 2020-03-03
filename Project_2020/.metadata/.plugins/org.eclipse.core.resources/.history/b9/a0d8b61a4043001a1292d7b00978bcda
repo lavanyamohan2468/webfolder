@@ -1,0 +1,77 @@
+package com.sonata.DAOImplementation;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.sonata.DAO.CustomerDAO;
+import com.sonata.Model.CustomerModel;
+
+
+
+public class CustomerDaoImplementation  implements CustomerDAO  {
+	 static List<CustomerModel> reg=new LinkedList<CustomerModel>();
+	private String password;
+	private String username;
+
+int row;
+	@Override
+	public int addUser(Object object) {
+		try {
+		CustomerModel cust=(CustomerModel)object;
+		DBConnection db=new DBConnection ();
+		PreparedStatement ps=db.getconnection().prepareStatement("insert into customer values (?,?,?,?,?,?,?,?,?,?,?)");
+	    ps.setInt(1,cust.getCustId());
+	    ps.setString(2,cust.getFirstname());
+	    ps.setString(3, cust.getPassword());
+	    ps.setString(4, cust.getUsername());
+	    ps.setInt(5, cust.getMobileno());
+	    ps.setString(6, cust.getEmailId());
+	    ps.setString(7, cust.getCountry());
+	    ps.setString(8, cust.getState());
+	    ps.setString(9, cust.getCity());
+	    ps.setString(10, cust.getStreet());
+	    ps.setInt(11, cust.getPinCode());
+	  ps.executeUpdate();
+		db.closeConnection();
+	}catch(SQLException e) {System.out.println(e);}
+		return row;
+		
+	
+	}
+
+    
+
+	@Override
+	public boolean verify(String username, String passWord) throws SQLException  {
+	CustomerModel cust=new CustomerModel();
+	DBConnection db=new DBConnection ();
+	PreparedStatement ps=db.getconnection().prepareStatement("insert into customer values (?,?)");
+	ps.setString(1, cust.getUsername());
+    ps.setString(2, cust.getPassword());
+	if(cust.getUsername()==username &&  cust.getPassword()==passWord)
+	{System.out.println("Login successful");}
+	else {System.out.println("invalid credentials");}
+	     db.closeConnection();
+	return true;}
+
+	@Override
+	public boolean changeAddress(int custId) {
+		
+		return false;
+	}
+
+	@Override
+	public boolean addtoCustomerGroup(int custId, int groupId) {
+		
+		return false;
+	}
+
+	@Override
+	public boolean getCustomerDetails(int custId) {
+		
+		return false;
+	}
+
+}

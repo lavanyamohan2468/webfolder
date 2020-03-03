@@ -1,0 +1,10 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.List;
+
+public interface RegistrationInterface {
+	public default void verify(String username,String passWord) {
+		};
+	public default void addUser(Registration e) {};
+
+}

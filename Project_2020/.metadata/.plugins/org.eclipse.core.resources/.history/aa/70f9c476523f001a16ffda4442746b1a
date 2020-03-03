@@ -1,0 +1,18 @@
+package com.sonata.RegistrationPackage;
+
+public class Login extends RegistrationBean implements RegistrationInterface{
+
+	public Login(String username, String password) {
+		super(username, password);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void verify() {
+		// TODO Auto-generated method stub
+		RegistrationInterface.super.verify();
+	}
+	
+	
+
+}

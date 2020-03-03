@@ -1,0 +1,10 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.List;
+
+public class RegistrationMain {
+	
+   RegistrationBean r=new RegistrationBean();
+  // List LinkedList< RegistrationBean> l1= new LinkedList<>();
+
+}

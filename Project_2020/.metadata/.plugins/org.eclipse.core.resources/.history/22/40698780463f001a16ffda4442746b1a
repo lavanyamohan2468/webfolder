@@ -1,0 +1,7 @@
+package com.sonata.RegistrationPackage;
+
+public interface Interface {
+	public default void verify() {};
+	public default void addUser() {};
+
+}

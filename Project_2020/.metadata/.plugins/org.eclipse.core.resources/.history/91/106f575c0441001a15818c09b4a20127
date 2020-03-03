@@ -1,0 +1,24 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.List;
+
+public interface RegistrationInterface {
+	public default boolean verify(String username,String passWord) {
+		return true;
+	};
+	public default boolean addUser(Registration e) {
+		return true;
+	};
+	
+	public default  boolean changeAddress(int custId) {
+		return true;
+	};
+	
+	public default boolean addtoCustomerGroup(int custId,int groupId) {
+		return true;
+	};
+
+	public default  boolean getCustomerDetails(int custId) {
+		return true;
+	};
+}

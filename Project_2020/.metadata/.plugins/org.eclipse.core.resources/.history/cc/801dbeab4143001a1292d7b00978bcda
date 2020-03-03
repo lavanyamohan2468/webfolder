@@ -1,0 +1,41 @@
+package com.sonata.Main;
+
+import java.sql.SQLException;
+
+import com.sonata.DAOImplementation.CustomerDaoImplementation;
+import com.sonata.Model.CustomerModel;
+
+public class TestRegistration {
+
+	public static void main(String[] args) throws SQLException {
+		
+		CustomerModel cust=new CustomerModel();
+		
+		CustomerDaoImplementation dao=new CustomerDaoImplementation();
+        
+		cust.setCustId(101);
+		cust.setFirst_name("vcvfgb");
+		cust.setPassword("lav");
+		cust.setUsername("lavanya");
+		cust.setMobileno(3456895);
+		cust.setEmailId("lahgfvgajksg");
+		cust.setCountry("india");
+		cust.setPinCode(133546);
+		cust.setState("karnataka");
+		cust.setCity("bangalore");
+		cust.setStreet("hsfgahi");	
+		cust.setAlternateMobNo(65486586);
+		cust.setLast_name("mohan");
+		
+		//dao.addUser(cust);
+		//dao.verify("lavanya", "la64");
+		System.out.println(dao.addUser(cust));
+		
+	}
+	
+
+}
+
+
+
+

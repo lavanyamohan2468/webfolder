@@ -1,0 +1,17 @@
+package com.sonata.RegistrationPackage;
+
+public class RegistrationBean extends Address{
+	
+	public int custId;
+	public String name;
+	public String password;
+	public String username;
+	public int mobileno;
+	public  int alternateMobNo;
+	public Address emailId;
+	public Address country;
+	public Address state;
+	public Address city;
+	public Address street;
+	public Address pinCode;
+}

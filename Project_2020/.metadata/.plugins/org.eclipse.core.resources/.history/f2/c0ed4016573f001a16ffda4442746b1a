@@ -1,0 +1,37 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Registration  extends RegistrationBean implements RegistrationInterface{
+     static List<RegistrationBean> reg=new LinkedList<RegistrationBean>();
+    
+	 @Override
+	 public void addUser(Registration e) {
+		reg.add(e);
+		System.out.println(reg);
+	  }
+    
+	  public Registration(int custId, String name, String password, String username, int mobileno, int alternateMobNo) {
+		super(custId, name, password, username, mobileno, alternateMobNo);
+		
+		
+	 }
+
+	@Override
+	public void verify(String username, String passWord) {
+		if(this.username==username && this.password==passWord) {
+			System.out.println(hii);
+		}
+	
+	 
+	}
+
+	
+	
+ 
+	
+	
+	
+
+}

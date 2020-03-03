@@ -1,0 +1,26 @@
+package com.sonata.Main;
+
+import com.sonata.DAOImplementation.CustomerDaoImplementation;
+import com.sonata.Model.CustomerModel;
+
+public class TestRegistration {
+
+	public static void main(String[] args) {
+		
+		CustomerModel c=new CustomerModel();
+		
+		CustomerDaoImplementation dao=new CustomerDaoImplementation();
+        
+		c.setCustId(101);
+		c.setFirst_name("vcvfgb");
+		c.setPinCode(133546);
+		dao.addUser(c);
+		System.out.println(c);
+	}
+	
+
+}
+
+
+
+

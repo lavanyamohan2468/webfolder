@@ -1,0 +1,19 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class RegistrationMain {
+		public static void main(String args[]) {
+	List<Registration>lr=new LinkedList<Registration>();
+	
+	
+	//int custId, String name, String password, String username, int mobileno, int alternateMobNo
+	Registration r1=new Registration(101,"lava","1346","lava@123", 65847878, 887645788);
+	lr.add(r1);
+	System.out.println(lr);
+	//r1.addUser(r1);
+	//Login l1=new Login("lava@123","1346");
+     //l1.verify("lava@123","1346");
+		}
+}

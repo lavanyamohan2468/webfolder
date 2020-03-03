@@ -1,0 +1,16 @@
+package com.sonata.Main;
+
+import com.sonata.DAOImplementation.CustomerDaoImplementation;
+import com.sonata.Model.CustomerModel;
+
+public class TestRegistration {
+
+	public static void main(String[] args) {
+		
+		CustomerModel c=new CustomerModel();
+		
+		CustomerDaoImplementation dao=new CustomerDaoImplementation();
+
+	}
+
+}

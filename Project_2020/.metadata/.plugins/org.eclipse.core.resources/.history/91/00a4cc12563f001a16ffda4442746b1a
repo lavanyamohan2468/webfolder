@@ -1,0 +1,25 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Login extends RegistrationBean implements RegistrationInterface{
+
+	List<Registration> r=new LinkedList<Registration>();
+	//Registration r1=new Registration();
+	List<Registration> l1= Registration.getReg();
+@Override
+	public void verify(String username, String passWord) {
+		r.get(getCustId());
+		System.out.println(r);
+	
+	}
+
+
+public Login(String username, String password) {
+		
+		super(username, password);
+		// TODO Auto-generated constructor stub
+	}
+
+}

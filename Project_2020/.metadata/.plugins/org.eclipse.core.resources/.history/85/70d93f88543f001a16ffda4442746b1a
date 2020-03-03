@@ -1,0 +1,11 @@
+package com.sonata.RegistrationPackage;
+
+public class Address {
+	public String country;
+	public String state;
+	public String city;
+	public String street;
+	public int pinCode;
+	
+
+}

@@ -1,0 +1,59 @@
+package com.sonata.CustomerPackage;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Customer  extends CustomerModel implements CustomerInterface{
+     static List<CustomerModel> reg=new LinkedList<CustomerModel>();
+    
+	 @Override
+	 public boolean addUser(Customer e) {
+		reg.add(e);
+		System.out.println(reg);
+		return true;
+	  }
+    
+	  public Customer(int custId, String name, String password, String username, int mobileno, int alternateMobNo) {
+		super(custId, name, password, username, mobileno, alternateMobNo);
+		
+		
+	 }
+
+	@Override
+	public boolean verify(String username, String passWord) {
+		if(this.username==username && this.password==passWord) {
+			System.out.println("Login successful");}
+			else {
+				
+				System.out.println("invalid credentials");
+			}
+		return true;
+		}
+
+	@Override
+	public boolean changeAddress(int custId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addtoCustomerGroup(int custId, int groupId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getCustomerDetails(int custId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
+	 
+	
+	
+ 
+	
+	
+	
+
+

@@ -1,0 +1,15 @@
+package com.sonata.DAO;
+
+import com.sonata.CustomerPackage.Customer;
+
+public interface CustomerDAO {
+public boolean verify(String username,String passWord) ;
+	
+	public boolean addUser(Customer e) ;
+	
+	public  boolean changeAddress(int custId) ;
+	
+	public boolean addtoCustomerGroup(int custId,int groupId) ;
+	public boolean getCustomerDetails(int custId) ;
+
+}

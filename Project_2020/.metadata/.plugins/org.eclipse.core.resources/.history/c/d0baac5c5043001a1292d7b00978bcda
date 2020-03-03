@@ -1,0 +1,93 @@
+package com.sonata.DAOImplementation;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.sonata.DAO.CustomerDAO;
+import com.sonata.Model.CustomerModel;
+
+
+
+public class CustomerDaoImplementation  implements CustomerDAO  {
+	/* static List<CustomerModel> reg=new LinkedList<CustomerModel>();
+	private String password;
+	private String username;
+*/
+
+	@Override
+	public int addUser(Object object) {
+		int row=0;
+		try {
+		CustomerModel cust=(CustomerModel)object;
+		DBConnection db=new DBConnection ();
+		PreparedStatement ps=db.getconnection().prepareStatement("insert into customer values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	    ps.setInt(1,cust.getCustId());
+	    ps.setString(2,cust.getFirstname());
+	    ps.setString(3, cust.getLastname());
+	    ps.setString(4, cust.getUsername());
+	    ps.setString(5, cust.getPassword());
+	   
+	    ps.setInt(6, cust.getMobileno());
+	    ps.setInt(7, cust.getAlternateMobNo());
+	    
+	    ps.setString(8, cust.getEmailId());
+	    ps.setString(9, cust.getCountry());
+	    ps.setString(10, cust.getState());
+	    ps.setString(11, cust.getCity());
+	    ps.setString(12, cust.getStreet());
+	    ps.setInt(13, cust.getPinCode());
+	   
+	   row=ps.executeUpdate();
+		db.closeConnection();
+	}catch(SQLException e) {System.out.println(e);}
+		return row;
+		
+	
+	}
+
+    
+
+	@Override
+	public boolean verify(String username, String passWord) throws SQLException  {
+	try{
+	CustomerModel cust=new CustomerModel();
+	DBConnection db=new DBConnection ();
+	PreparedStatement ps=db.getconnection().prepareStatement("");
+	ps.setString(1, cust.getUsername());
+    ps.setString(2, cust.getPassword());
+	if(cust.getUsername()==username &&  cust.getPassword()==passWord)
+	{System.out.println("Login successful");}
+	else {System.out.println("invalid credentials");}
+	     db.closeConnection();
+	     }catch(SQLException e1) {System.out.println(e1);}
+	return true;}
+
+	@Override
+	public boolean changeAddress(int custId) {
+		try {
+		CustomerModel cust=new CustomerModel();
+		DBConnection db=new DBConnection ();
+		PreparedStatement ps=db.getconnection().prepareStatement("update customer set country=(?) where username=(?)");
+		ps.setString(1, cust.getCountry());
+		ps.setInt(2, cust.getUsername());
+		int row=ps.executeUpdate();
+		db.closeConnection();
+		
+	
+	}catch(SQLException e1) {System.out.println(e1);}	return false;}
+
+	@Override
+	public boolean addtoCustomerGroup(int custId, int groupId) {
+		
+		return false;
+	}
+
+	@Override
+	public boolean getCustomerDetails(int custId) {
+		
+		return false;
+	}
+
+}

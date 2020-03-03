@@ -1,0 +1,15 @@
+package com.sonata.DAO;
+
+import java.sql.SQLException;
+
+public interface CustomerDAO {
+public boolean verify(String username,String passWord) throws SQLException ;
+	
+	public boolean addUser(Object object) ;
+	
+	public  boolean changeAddress(int custId) ;
+	
+	public boolean addtoCustomerGroup(int custId,int groupId) ;
+	public boolean getCustomerDetails(int custId) ;
+
+}

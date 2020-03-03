@@ -1,0 +1,8 @@
+package com.sonata.RegistrationPackage;
+
+import java.util.List;
+
+public class RegistrationMain {
+	Registration r =new Registration();
+
+}

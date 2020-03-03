@@ -1,0 +1,7 @@
+package com.sonata.RegistrationPackage;
+
+public class Custom {
+	int groupId;
+	String groupName;
+
+}

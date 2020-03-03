@@ -1,0 +1,12 @@
+package com.sonata.CustomerPackage;
+
+public interface CustomerInterface {
+	public boolean verify(String username,String passWord) ;
+	
+	public boolean addUser(Customer e) ;
+	
+	public  boolean changeAddress(int custId) ;
+	
+	public boolean addtoCustomerGroup(int custId,int groupId) ;
+	public boolean getCustomerDetails(int custId) ;
+}
